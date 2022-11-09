@@ -1,0 +1,33 @@
+<div class="col-lg-6 offset-lg-3">
+  <form class="vh-100 d-flex justify-content-center align-items-center flex-column"
+  [formGroup]="miform" (submit)="submitForm()">
+    <div class="row w-100 bg-white py-4 p-relative">
+      <h5 class="text-blac pk">LOGIN</h5>
+      <div class="col-lg-8">
+        <div class="mb-3 w-100">
+          <label for="usuario" class="form-label text-black">Usuario</label>
+          <input type="text" class="form-control" [class.is-invalid]="f.usuario.errors && f.usuario.touched" id="usuario" formControlName="usuario">
+          <div class="invalid-feedback text-black">
+          Campo correo obligatorio
+          </div>
+        </div>
+        <div class="mb-3 w-100">
+          <label for="contrasena" class="form-label text-black">Contraseña</label>
+          <input type="password" class="form-control" [class.is-invalid]="f.password.errors && f.password.touched" id="contrasena" formControlName="password">
+          <div class="invalid-feedback text-black">
+            Campo contraseña obligatorio
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 m-auto">
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">
+           Ingresar
+          </button>
+         </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>

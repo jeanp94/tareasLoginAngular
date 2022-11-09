@@ -1,0 +1,14 @@
+<h3 class="text-white my-4" *ngIf="usuario">USUARIO: {{ usuario }}</h3>
+<div class="bg-white p-4">
+  <label for="tarea" class="ml-1">Tarea:</label>
+  <input placeholder="Ingresa la tarea" type="text" class="ml-1" id="tarea" [(ngModel)]="nombreTarea">
+  <button [disabled]="!nombreTarea" (click)="guardarTarea()">Agregar</button>
+
+  <ul class="mt-4 p-0">
+      <li *ngFor="let tarea of tareas;let indice = index;" [class.tachado] ="tarea.terminada">
+          <input [(ngModel)]="tarea.terminada" (change)="cambiarEstadoDeTarea()" type="checkbox" >
+          {{tarea.nombre}}
+          <a  (click)="eliminarTarea(indice)" class="enlace-eliminar" [class.d-none]="tarea.terminada">&times;</a>
+      </li>
+  </ul>
+</div>
